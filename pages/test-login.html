@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System Test</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .test-button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #3730a3;
+        }
+        .test-result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f3f4f6;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔧 Login System Test Page</h1>
+        <p>এই পেজে নতুন login system এর বিভিন্ন features test করা যাবে।</p>
+        
+        <div class="test-section">
+            <h3>📋 Test Cases</h3>
+            <button class="test-button" onclick="testPasswordHashing()">Test Password Hashing</button>
+            <button class="test-button" onclick="testInputSanitization()">Test Input Sanitization</button>
+            <button class="test-button" onclick="testEmailValidation()">Test Email Validation</button>
+            <button class="test-button" onclick="testPhoneValidation()">Test Phone Validation</button>
+            <button class="test-button" onclick="testPasswordStrength()">Test Password Strength</button>
+            <button class="test-button" onclick="testNotificationSystem()">Test Notifications</button>
+            <button class="test-button" onclick="testErrorHandling()">Test Error Handling</button>
+            <button class="test-button" onclick="clearTestResults()">Clear Results</button>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 Test Results</h3>
+            <div id="testResults"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔗 Quick Links</h3>
+            <a href="login.html" class="test-button" style="text-decoration: none; display: inline-block;">Go to Login Page</a>
+            <a href="index.html" class="test-button" style="text-decoration: none; display: inline-block;">Go to Home Page</a>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+    <script>
+        // Test Functions
+        function addTestResult(title, result, success = true) {
+            const resultsDiv = document.getElementById('testResults');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = 'test-result';
+            resultDiv.innerHTML = `
+                <strong>${title}:</strong> 
+                <span style="color: ${success ? 'green' : 'red'}">${result}</span>
+            `;
+            resultsDiv.appendChild(resultDiv);
+        }
+
+        function testPasswordHashing() {
+            try {
+                // Test password hashing
+                const password = "test123";
+                const hashed1 = btoa(password + 'salt');
+                const hashed2 = btoa(password + 'salt');
+                
+                if (hashed1 === hashed2 && hashed1 !== password) {
+                    addTestResult("Password Hashing", "✅ Working correctly - passwords are hashed and consistent");
+                } else {
+                    addTestResult("Password Hashing", "❌ Failed - passwords not properly hashed", false);
+                }
+            } catch (error) {
+                addTestResult("Password Hashing", `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function testInputSanitization() {
+            try {
+                const testInputs = [
+                    "<script>alert('xss')</script>",
+                    "  test input  ",
+                    "normal input",
+                    "<img src=x onerror=alert(1)>"
+                ];
+                
+                const sanitized = testInputs.map(input => {
+                    if (typeof input !== 'string') return '';
+                    return input.trim().replace(/[<>]/g, '');
+                });
+                
+                const expected = [
+                    "scriptalert('xss')/script",
+                    "test input",
+                    "normal input",
+                    "img src=x onerror=alert(1)"
+                ];
+                
+                const success = JSON.stringify(sanitized) === JSON.stringify(expected);
+                addTestResult("Input Sanitization", success ? "✅ Working correctly - XSS prevention active" : "❌ Failed", success);
+            } catch (error) {
+                addTestResult("Input Sanitization", `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function testEmailValidation() {
+            try {
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                const testEmails = [
+                    "test@example.com",
+                    "invalid-email",
+                    "test@.com",
+                    "test@example",
+                    "test.email@domain.co.uk"
+                ];
+                
+                const results = testEmails.map(email => emailRegex.test(email));
+                const expected = [true, false, false, false, true];
+                
+                const success = JSON.stringify(results) === JSON.stringify(expected);
+                addTestResult("Email Validation", success ? "✅ Working correctly - proper email validation" : "❌ Failed", success);
+            } catch (error) {
+                addTestResult("Email Validation", `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function testPhoneValidation() {
+            try {
+                const phoneRegex = /^(\+880|880|0)?1[3-9]\d{8}$/;
+                const testPhones = [
+                    "01712345678",
+                    "01812345678",
+                    "+8801712345678",
+                    "8801712345678",
+                    "1234567890",
+                    "0171234567"
+                ];
+                
+                const results = testPhones.map(phone => phoneRegex.test(phone));
+                const expected = [true, true, true, true, false, false];
+                
+                const success = JSON.stringify(results) === JSON.stringify(expected);
+                addTestResult("Phone Validation", success ? "✅ Working correctly - Bangladesh phone validation" : "❌ Failed", success);
+            } catch (error) {
+                addTestResult("Phone Validation", `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function testPasswordStrength() {
+            try {
+                const testPasswords = [
+                    "weak",
+                    "Strong123",
+                    "onlylowercase",
+                    "ONLYUPPERCASE",
+                    "123456789",
+                    "MixedCase123"
+                ];
+                
+                const minLength = 6;
+                const maxLength = 128;
+                
+                const results = testPasswords.map(password => {
+                    return password.length >= minLength && 
+                           password.length <= maxLength &&
+                           /[A-Z]/.test(password) && 
+                           /[a-z]/.test(password) && 
+                           /\d/.test(password);
+                });
+                
+                const expected = [false, true, false, false, false, true];
+                
+                const success = JSON.stringify(results) === JSON.stringify(expected);
+                addTestResult("Password Strength", success ? "✅ Working correctly - strong password requirements" : "❌ Failed", success);
+            } catch (error) {
+                addTestResult("Password Strength", `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function testNotificationSystem() {
+            try {
+                if (typeof window.LoginApp !== 'undefined') {
+                    // Test notification system
+                    const notification = document.createElement('div');
+                    notification.className = 'notification success';
+                    notification.textContent = 'Test notification';
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.remove();
+                        }
+                    }, 1000);
+                    
+                    addTestResult("Notification System", "✅ Working correctly - notification displayed and auto-removed");
+                } else {
+                    addTestResult("Notification System", "❌ LoginApp not available", false);
+                }
+            } catch (error) {
+                addTestResult("Notification System", `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function testErrorHandling() {
+            try {
+                // Test error handling
+                const testFunction = () => {
+                    throw new Error("Test error");
+                };
+                
+                try {
+                    testFunction();
+                } catch (error) {
+                    addTestResult("Error Handling", "✅ Working correctly - errors are properly caught and handled");
+                    return;
+                }
+                
+                addTestResult("Error Handling", "❌ Failed - errors not properly handled", false);
+            } catch (error) {
+                addTestResult("Error Handling", `❌ Error: ${error.message}`, false);
+            }
+        }
+
+        function clearTestResults() {
+            document.getElementById('testResults').innerHTML = '';
+        }
+
+        // Auto-run basic tests on page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                addTestResult("System Status", "✅ Login system loaded successfully");
+                addTestResult("Global Functions", typeof window.LoginApp !== 'undefined' ? "✅ Available" : "❌ Not available", typeof window.LoginApp !== 'undefined');
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 

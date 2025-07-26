@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লগইন - SSC Memories Gallery</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>SSC Memories</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">হোম</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">গ্যালারি</a>
+                </li>
+                <li class="nav-item">
+                    <a href="friends.html" class="nav-link">বন্ধুরা</a>
+                </li>
+                <li class="nav-item">
+                    <a href="memories.html" class="nav-link">স্মৃতিকথা</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about-creator.html" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        👤 About Creator
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link admin-link">
+                        <i class="fas fa-cog"></i>
+                        এডমিন
+                    </a>
+                </li>
+            </ul>
+            <div class="theme-toggle desktop-theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-controls">
+                <div class="theme-toggle mobile-theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <div class="login-section">
+        <div class="login-container">
+            <div class="login-box">
+                <div class="login-header">
+                    <i class="fas fa-user-circle"></i>
+                    <h2>লগইন করুন</h2>
+                    <p>আপনার অ্যাকাউন্টে প্রবেশ করুন</p>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="loginEmail">ইমেইল</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">পাসওয়ার্ড</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-login">লগইন করুন</button>
+                </form>
+                
+                <div class="form-divider">
+                    <span>অথবা</span>
+                </div>
+                
+                <!-- Register Form -->
+                <form id="registerForm" class="register-form">
+                    <div class="form-group">
+                        <label for="registerName">পূর্ণ নাম</label>
+                        <input type="text" id="registerName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">ইমেইল</label>
+                        <input type="email" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPhone">ফোন নম্বর</label>
+                        <input type="tel" id="registerPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">পাসওয়ার্ড</label>
+                        <input type="password" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">পাসওয়ার্ড নিশ্চিত করুন</label>
+                        <input type="password" id="registerConfirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn-register">নিবন্ধন করুন</button>
+                </form>
+                
+                <div class="form-toggle">
+                    <button id="toggleForm" class="btn-toggle">
+                        <span id="toggleText">নতুন অ্যাকাউন্ট তৈরি করুন</span>
+                    </button>
+                </div>
+                
+                <div class="back-to-site">
+                    <a href="index.html"><i class="fas fa-arrow-left"></i> মূল সাইটে ফিরে যান</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SSC Memories Gallery</h3>
+                    <p>আমাদের স্কুল জীবনের স্মৃতিগুলো চিরকালের জন্য সংরক্ষণ</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="gallery.html">গ্যালারি</a></li>
+                        <li><a href="friends.html">বন্ধুরা</a></li>
+                        <li><a href="memories.html">স্মৃতিকথা</a></li>
+                        <li><a href="admin.html">এডমিন প্যানেল</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/mjmonir.islam.1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/monirstech?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SSC Memories Gallery. Made with ❤️ for our friends.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html> 

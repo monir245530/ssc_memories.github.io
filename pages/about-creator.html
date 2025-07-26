@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Creator - Monir's Zone</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/about-creator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>SSC Memories</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">হোম</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">গ্যালারি</a>
+                </li>
+                <li class="nav-item">
+                    <a href="friends.html" class="nav-link">বন্ধুরা</a>
+                </li>
+                <li class="nav-item">
+                    <a href="memories.html" class="nav-link">স্মৃতিকথা</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about-creator.html" class="nav-link active">
+                        <i class="fas fa-user"></i>
+                        👤 About Creator
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link admin-link">
+                        <i class="fas fa-cog"></i>
+                        এডমিন
+                    </a>
+                </li>
+                <li class="nav-item" id="loginNavItem">
+                    <a href="login.html" class="nav-link login-link">
+                        <i class="fas fa-sign-in-alt"></i>
+                        লগইন
+                    </a>
+                </li>
+                <li class="nav-item" id="userNavItem" style="display: none;">
+                    <div class="user-menu">
+                        <button class="user-menu-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="userName">ইউজার</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                প্রোফাইল
+                            </a>
+                            <a href="#" class="dropdown-item" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                লগআউট
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="theme-toggle desktop-theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-controls">
+                <div class="theme-toggle mobile-theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content (Direct Access) -->
+    <div id="mainContent" class="main-content">
+        <!-- Hero Section -->
+        <section class="creator-hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="../images/creator_img/monir.jpg" alt="Monir Hossain" oncontextmenu="return false;" ondragstart="return false;">
+                    </div>
+                    <div style="margin-top: 12px; display: flex; align-items: center; gap: 10px; justify-content: center;">
+                        <span style="font-style: italic; color: #ff0000; font-size: 1.05em;">(You are my first and last love... )</span>
+                        <a href="../My_Love/My_first_Love.html" class="see-it-btn" style="background: #d1acd3; color: #fff; border: none; border-radius: 5px; padding: 1px 6px; font-weight: 500; text-decoration: none; font-size: 1em; transition: background 0.2s; cursor: pointer;" target="_blank">See</a>
+                    </div>
+                    <div class="profile-info">
+                        <h1>👤 Monir's Zone</h1>
+                        <h2>MD MONIRUZZAMAN MONIR</h2>
+                        <p class="profession">ওয়েব ডেভেলপার / কনটেন্ট ক্রিয়েটর</p>
+                        <p class="experience">অভিজ্ঞতা: 6+ মাস</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="content-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <a href="#profile" class="sidebar-link active" data-section="profile">
+                        <i class="fas fa-user"></i>
+                        👤 My Profile
+                    </a>
+                    <a href="#contact" class="sidebar-link" data-section="contact">
+                        <i class="fas fa-phone"></i>
+                        📞 Contact Info
+                    </a>
+                    <a href="#projects" class="sidebar-link" data-section="projects">
+                        <i class="fas fa-folder"></i>
+                        🗂️ Projects
+                    </a>
+                    <a href="#logs" class="sidebar-link" data-section="logs">
+                        <i class="fas fa-history"></i>
+                        🕓 Update Logs
+                    </a>
+                    <a href="#notes" class="sidebar-link" data-section="notes">
+                        <i class="fas fa-sticky-note"></i>
+                        🔐 Private Notes
+                    </a>
+                    <a href="#resources" class="sidebar-link" data-section="resources">
+                        <i class="fas fa-download"></i>
+                        📂 Resources
+                    </a>
+                    <a href="#test" class="sidebar-link" data-section="test">
+                        <i class="fas fa-flask"></i>
+                        🧪 Test Environment
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Area -->
+            <main class="main-area">
+                <!-- Profile Section -->
+                <section id="profile" class="content-section active">
+                    <div class="section-header">
+                        <h2>👤 My Profile</h2>
+                        <p>আমার সম্পর্কে বিস্তারিত তথ্য</p>
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-card">
+                            <div class="profile-details">
+                                <h3>ব্যক্তিগত তথ্য</h3>
+                                <ul>
+                                    <li><strong>নাম:</strong> MD MONIRUZZAMAN MONIR</li>
+                                    <li><strong>পেশা:</strong> ওয়েব ডেভেলপার / কনটেন্ট ক্রিয়েটর</li>
+                                    <li><strong>অভিজ্ঞতা:</strong> 6+ মাস</li>
+                                    <li><strong>বিশেষায়ন:</strong> Frontend Development, UI/UX Design</li>
+                                    <li><strong>ভাষা:</strong> বাংলা, ইংরেজি</li>
+                                </ul>
+                            </div>
+                            <div class="bio-section">
+                                <h3>শুরুর যাত্রার গল্প</h3>
+                                <p>আমার প্রোগ্রামিং যাত্রা শুরু হয়েছে কলেজ জীবনে। প্রথমে HTML, CSS দিয়ে শুরু করে এখন React, Node.js পর্যন্ত এসেছি। প্রতিটি প্রজেক্টে নতুন কিছু শিখতে চাই এবং ব্যবহারকারীদের জন্য সুন্দর ও কার্যকরী ওয়েবসাইট তৈরি করাই আমার লক্ষ্য।</p>
+                                <p>বর্তমানে ফ্রিল্যান্সিং করছি এবং বিভিন্ন ক্লায়েন্টের জন্য ওয়েবসাইট ডেভেলপ করছি। প্রতিটি প্রজেক্টে আমি আমার সর্বোচ্চ চেষ্টা করি যাতে ক্লায়েন্ট সন্তুষ্ট থাকে।</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="content-section">
+                    <div class="section-header">
+                        <h2>📞 Contact Information</h2>
+                        <p>আমার সাথে যোগাযোগ করুন</p>
+                    </div>
+                    <div class="contact-content">
+                        <div class="contact-grid">
+                            <div class="contact-card">
+                                <i class="fas fa-phone"></i>
+                                <h3>মোবাইল নাম্বার</h3>
+                                <p class="contact-value" data-copy="+880 1868913***">+880 1868913***</p>
+                                <button class="copy-btn" data-copy="+880 1868913***">
+                                    <i class="fas fa-copy"></i> কপি করুন
+                                </button>
+                            </div>
+                            <div class="contact-card">
+                                <i class="fas fa-envelope"></i>
+                                <h3>ইমেইল ঠিকানা</h3>
+                                <p class="contact-value" data-copy="skmonir245529@gmail.com">skmonir245529@gmail.com</p>
+                                <button class="copy-btn" data-copy="skmonir245529@gmail.com">
+                                    <i class="fas fa-copy"></i> কপি করুন
+                                </button>
+                            </div>
+                            <div class="contact-card">
+                                <i class="fab fa-whatsapp"></i>
+                                <h3>WhatsApp</h3>
+                                <p class="contact-value">+880 1868913***</p>
+                                <a href="https://wa.me/+880 1868913***" class="contact-link" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> মেসেজ করুন
+                                </a>
+                            </div>
+                            <div class="contact-card">
+                                <i class="fab fa-telegram"></i>
+                                <h3>Telegram</h3>
+                                <p class="contact-value">@monir_dev</p>
+                                <a href="https://t.me/monir_dev" class="contact-link" target="_blank">
+                                    <i class="fab fa-telegram"></i> মেসেজ করুন
+                                </a>
+                            </div>
+                        </div>
+                        <div class="social-links-section">
+                            <h3>Social Media Links</h3>
+                            <div class="social-grid">
+                                <a href="https://www.facebook.com/mjmonir.islam.1" class="social-link facebook">
+                                    <i class="fab fa-facebook"></i>
+                                    Facebook
+                                </a>
+                                <a href="#" class="social-link linkedin">
+                                    <i class="fab fa-linkedin"></i>
+                                    LinkedIn
+                                </a>
+                                <a href="#" class="social-link github">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </a>
+                                <a href="#" class="social-link instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="content-section">
+                    <div class="section-header">
+                        <h2>🗂️ Project History</h2>
+                        <p>আমার তৈরি করা ওয়েবসাইটগুলো</p>
+                    </div>
+                    <div class="projects-content">
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="../images/mycreate_web_image/ssc_galary.png" alt="SSC Gallery" oncontextmenu="return false;" ondragstart="return false;">
+                                </div>
+                                <div class="project-info">
+                                    <h3>✅ SSC Gallery</h3>
+                                    <p>ফ্রেন্ডসদের জন্য ফটো শেয়ারিং সাইট</p>
+                                    <div class="project-features">
+                                        <span class="feature-tag">HTML/CSS</span>
+                                        <span class="feature-tag">JavaScript</span>
+                                        <span class="feature-tag">Responsive</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link live">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            🔗 Visit
+                                        </a>
+                                        <a href="#" class="project-link demo">
+                                            <i class="fas fa-play"></i>
+                                            Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="../images/mycreate_web_image/Dictionary Pro.png" alt="Dictionary Pro" oncontextmenu="return false;" ondragstart="return false;">
+                                </div>
+                                <div class="project-info">
+                                    <h3>✅ Dictionary Pro</h3>
+                                    <p>এডভান্সড ইংরেজি-বাংলা ডিকশনারি</p>
+                                    <div class="project-features">
+                                        <span class="feature-tag">React</span>
+                                        <span class="feature-tag">API</span>
+                                        <span class="feature-tag">Search</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link live">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            🔗 Visit
+                                        </a>
+                                        <a href="#" class="project-link demo">
+                                            <i class="fas fa-play"></i>
+                                            Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="../images/mycreate_web_image/E-Commerce.png" alt="E-Commerce" oncontextmenu="return false;" ondragstart="return false;">
+                                </div>
+                                <div class="project-info">
+                                    <h3>✅ E-Commerce Platform</h3>
+                                    <p>অনলাইন শপিং ওয়েবসাইট</p>
+                                    <div class="project-features">
+                                        <span class="feature-tag">Node.js</span>
+                                        <span class="feature-tag">MongoDB</span>
+                                        <span class="feature-tag">Payment</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link live">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            🔗 Visit
+                                        </a>
+                                        <a href="#" class="project-link demo">
+                                            <i class="fas fa-play"></i>
+                                            Demo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Update Logs Section -->
+                <section id="logs" class="content-section">
+                    <div class="section-header">
+                        <h2>🕓 Update Logs</h2>
+                        <p>ওয়েবসাইটের আপডেট ইতিহাস</p>
+                    </div>
+                    <div class="logs-content">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">🗓️ 2025-01-15</div>
+                                <div class="timeline-content">
+                                    <h4>Added About Creator Section</h4>
+                                    <p>নতুন About Creator পেজ যোগ করা হয়েছে যেখানে প্রোফাইল, প্রজেক্ট, আপডেট লগ ইত্যাদি দেখানো হবে</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">🗓️ 2025-01-10</div>
+                                <div class="timeline-content">
+                                    <h4>Improved Login System</h4>
+                                    <p>লগইন সিস্টেমে নতুন ফিচার যোগ করা হয়েছে - মোবাইল নাম্বার, ইমেইল, পাসওয়ার্ড</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">🗓️ 2025-01-05</div>
+                                <div class="timeline-content">
+                                    <h4>Enhanced Gallery Design</h4>
+                                    <p>গ্যালারি পেজের ডিজাইন আপডেট করা হয়েছে - নতুন ফিল্টার, সার্চ ফিচার যোগ করা হয়েছে</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">🗓️ 2025-01-01</div>
+                                <div class="timeline-content">
+                                    <h4>Website Launch</h4>
+                                    <p>SSC Memories Gallery ওয়েবসাইট লঞ্চ করা হয়েছে</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Private Notes Section -->
+                <section id="notes" class="content-section">
+                    <div class="section-header">
+                        <h2>🔐 Private Notes / To-Do</h2>
+                        <p>ডেভেলপার নোটস এবং ভবিষ্যতের পরিকল্পনা</p>
+                    </div>
+                    <div class="notes-content">
+                        <div class="notes-grid">
+                            <div class="notes-card">
+                                <h3>📝 Important Notes</h3>
+                                <div class="notes-list">
+                                    <div class="note-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>লগইন সিস্টেমে OTP ফিচার যোগ করতে হবে</span>
+                                    </div>
+                                    <div class="note-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>গ্যালারিতে ভিডিও আপলোড ফিচার যোগ করতে হবে</span>
+                                    </div>
+                                    <div class="note-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>মোবাইল অ্যাপ ডেভেলপ করতে হবে</span>
+                                    </div>
+                                    <div class="note-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>ডাটাবেস অপটিমাইজেশন করতে হবে</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notes-card">
+                                <h3>💡 Future Ideas</h3>
+                                <div class="ideas-list">
+                                    <div class="idea-item">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <span>AI-powered photo tagging system</span>
+                                    </div>
+                                    <div class="idea-item">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <span>Real-time chat feature for friends</span>
+                                    </div>
+                                    <div class="idea-item">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <span>Event calendar and reminders</span>
+                                    </div>
+                                    <div class="idea-item">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <span>Memory timeline with stories</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resources Section -->
+                <section id="resources" class="content-section">
+                    <div class="section-header">
+                        <h2>📂 Resource Download</h2>
+                        <p>ডাউনলোড করার জন্য গুরুত্বপূর্ণ ফাইলগুলো</p>
+                    </div>
+                    <div class="resources-content">
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <div class="resource-icon">
+                                    <i class="fas fa-file-code"></i>
+                                </div>
+                                <div class="resource-info">
+                                    <h3>Custom CSS Framework</h3>
+                                    <p>আমার তৈরি করা CSS ফ্রেমওয়ার্ক</p>
+                                    <span class="file-size">2.5 MB</span>
+                                </div>
+                                <button class="download-btn">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </button>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="resource-info">
+                                    <h3>UI Design Templates</h3>
+                                    <p>ওয়েবসাইট ডিজাইনের টেমপ্লেট</p>
+                                    <span class="file-size">5.2 MB</span>
+                                </div>
+                                <button class="download-btn">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </button>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="resource-info">
+                                    <h3>Development Guide</h3>
+                                    <p>ওয়েব ডেভেলপমেন্ট গাইড</p>
+                                    <span class="file-size">1.8 MB</span>
+                                </div>
+                                <button class="download-btn">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Test Environment Section -->
+                <section id="test" class="content-section">
+                    <div class="section-header">
+                        <h2>🧪 Test Environment</h2>
+                        <p>কোড টেস্ট করার জন্য ইনবিল্ট টুল</p>
+                    </div>
+                    <div class="test-content">
+                        <div class="test-grid">
+                            <div class="test-card">
+                                <h3>HTML/CSS Preview</h3>
+                                <div class="code-editor">
+                                    <div class="editor-tabs">
+                                        <button class="tab-btn active" data-tab="html">HTML</button>
+                                        <button class="tab-btn" data-tab="css">CSS</button>
+                                        <button class="tab-btn" data-tab="preview">Preview</button>
+                                    </div>
+                                    <div class="editor-content">
+                                        <textarea id="htmlCode" class="code-textarea" placeholder="HTML কোড লিখুন...">
+&lt;div class="test-box"&gt;
+    &lt;h2&gt;Hello World!&lt;/h2&gt;
+    &lt;p&gt;This is a test content.&lt;/p&gt;
+&lt;/div&gt;</textarea>
+                                        <textarea id="cssCode" class="code-textarea" placeholder="CSS কোড লিখুন...">
+.test-box {
+    background: linear-gradient(45deg, #4f46e5, #06b6d4);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 1rem;
+}</textarea>
+                                        <div id="previewArea" class="preview-area"></div>
+                                    </div>
+                                </div>
+                                <button class="run-btn" onclick="runCode()">
+                                    <i class="fas fa-play"></i>
+                                    Run Code
+                                </button>
+                            </div>
+                            <div class="test-card">
+                                <h3>API Tester</h3>
+                                <div class="api-tester">
+                                    <div class="api-input">
+                                        <input type="text" id="apiUrl" placeholder="API URL" value="https://jsonplaceholder.typicode.com/posts/1">
+                                        <select id="apiMethod">
+                                            <option value="GET">GET</option>
+                                            <option value="POST">POST</option>
+                                            <option value="PUT">PUT</option>
+                                            <option value="DELETE">DELETE</option>
+                                        </select>
+                                    </div>
+                                    <textarea id="apiBody" placeholder="Request Body (JSON)"></textarea>
+                                    <button class="api-btn" onclick="testAPI()">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Send Request
+                                    </button>
+                                    <div id="apiResponse" class="api-response"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SSC Memories Gallery</h3>
+                    <p>আমাদের স্কুল জীবনের স্মৃতিগুলো চিরকালের জন্য সংরক্ষণ</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="gallery.html">গ্যালারি</a></li>
+                        <li><a href="friends.html">বন্ধুরা</a></li>
+                        <li><a href="memories.html">স্মৃতিকথা</a></li>
+                        <li><a href="admin.html">এডমিন প্যানেল</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/mjmonir.islam.1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/monirstech?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SSC Memories Gallery. Made with ❤️ for our friends.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/about-creator.js"></script>
+</body>
+</html> 

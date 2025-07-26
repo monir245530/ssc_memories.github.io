@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC Memories Gallery - আমাদের স্কুল জীবনের স্মৃতিগুলো</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>SSC Memories</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">হোম</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">গ্যালারি</a>
+                </li>
+                <li class="nav-item">
+                    <a href="friends.html" class="nav-link">বন্ধুরা</a>
+                </li>
+                <li class="nav-item">
+                    <a href="memories.html" class="nav-link">স্মৃতিকথা</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about-creator.html" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        👤 About Creator
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link admin-link">
+                        <i class="fas fa-cog"></i>
+                        এডমিন
+                    </a>
+                </li>
+                <li class="nav-item" id="loginNavItem">
+                    <a href="login.html" class="nav-link login-link">
+                        <i class="fas fa-sign-in-alt"></i>
+                        লগইন
+                    </a>
+                </li>
+                <li class="nav-item" id="userNavItem" style="display: none;">
+                    <div class="user-menu">
+                        <button class="user-menu-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="userName">ইউজার</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                প্রোফাইল
+                            </a>
+                            <a href="#" class="dropdown-item" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                লগআউট
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="theme-toggle desktop-theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-controls">
+                <div class="theme-toggle mobile-theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>  
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-slideshow"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Welcome to Our</span>
+                <span class="title-highlight">SSC Memories Gallery</span>
+            </h1>
+            <p class="hero-subtitle">
+                আমাদের স্কুল জীবনের অমূল্য স্মৃতিগুলো ডিজিটাল অ্যালবামে ধরে রাখার চেষ্টা
+            </p>
+            <div class="hero-buttons">
+                <a href="gallery.html" class="btn btn-primary">
+                    <i class="fas fa-images"></i>
+                    Explore Gallery
+                </a>
+                <a href="friends.html" class="btn btn-secondary">
+                    <i class="fas fa-users"></i>
+                    Meet Friends
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">আমাদের গ্যালারির বিশেষত্ব</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>ফটো গ্যালারি</h3>
+                    <p>সব বন্ধুদের ছবি সুন্দরভাবে সাজানো</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>স্মৃতিকথা</h3>
+                    <p>স্কুল জীবনের মজার ঘটনাগুলো</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>সার্চ & ফিল্টার</h3>
+                    <p>সহজে বন্ধু খুঁজে পাওয়া</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>মোবাইল ফ্রেন্ডলি</h3>
+                    <p>সব ডিভাইসে সুন্দরভাবে দেখা যায়</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="28">0</div>
+                    <div class="stat-label">বন্ধু</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="200">0</div>
+                    <div class="stat-label">ছবি</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">বছর</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">স্মৃতি</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SSC Memories Gallery</h3>
+                    <p>আমাদের স্কুল জীবনের স্মৃতিগুলো চিরকালের জন্য সংরক্ষণ</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="gallery.html">গ্যালারি</a></li>
+                        <li><a href="friends.html">বন্ধুরা</a></li>
+                        <li><a href="memories.html">স্মৃতিকথা</a></li>
+                        <li><a href="admin.html">এডমিন প্যানেল</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/mjmonir.islam.1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/monirstech?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SSC Memories Gallery. Made with ❤️ for our friends.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+window.onerror = function(message, source, lineno, colno, error) {
+  alert('JavaScript Error: ' + message + '\\n' + source + ':' + lineno);
+};
+</script>
+    <script src="../js/script.js"></script>
+</body>
+</html> 

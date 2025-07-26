@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Test - SSC Memories Gallery</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .responsive-test {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-secondary);
+        }
+        
+        .test-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .device-info {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .breakpoint-test {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .breakpoint-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .breakpoint-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .breakpoint-card.active {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        .breakpoint-card.active h4 {
+            color: white;
+        }
+        
+        .feature-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .demo-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .demo-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .demo-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-form {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-item {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .responsive-nav {
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+        
+        .responsive-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .responsive-nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .responsive-nav a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .responsive-nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .mobile-toggle {
+                display: block;
+                margin-bottom: 1rem;
+            }
+            
+            .responsive-nav ul.hidden {
+                display: none;
+            }
+        }
+        
+        .test-notes {
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .test-notes h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .test-notes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .test-notes li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .test-notes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>SSC Memories</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">হোম</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">গ্যালারি</a>
+                </li>
+                <li class="nav-item">
+                    <a href="friends.html" class="nav-link">বন্ধুরা</a>
+                </li>
+                <li class="nav-item">
+                    <a href="memories.html" class="nav-link">স্মৃতিকথা</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about-creator.html" class="nav-link">👤 About Creator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link login-link">লগইন</a>
+                </li>
+            </ul>
+            <div class="theme-toggle desktop-theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-controls">
+                <div class="theme-toggle mobile-theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="responsive-test">
+        <div class="device-info">
+            <h1>📱 Responsive Design Test</h1>
+            <p>এই পেজে সব ডিভাইসে কীভাবে দেখায় তা টেস্ট করুন</p>
+        </div>
+
+        <!-- Breakpoint Test -->
+        <div class="test-section">
+            <h2>🖥️ Breakpoint Detection</h2>
+            <div class="breakpoint-test">
+                <div class="breakpoint-card" id="desktop">
+                    <h4>Desktop</h4>
+                    <p>1024px+</p>
+                </div>
+                <div class="breakpoint-card" id="tablet">
+                    <h4>Tablet</h4>
+                    <p>768px - 1023px</p>
+                </div>
+                <div class="breakpoint-card" id="mobile">
+                    <h4>Mobile</h4>
+                    <p>480px - 767px</p>
+                </div>
+                <div class="breakpoint-card" id="small-mobile">
+                    <h4>Small Mobile</h4>
+                    <p>< 480px</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Test -->
+        <div class="test-section">
+            <h2>🧭 Navigation Test</h2>
+            <div class="responsive-nav">
+                <button class="mobile-toggle" onclick="toggleMobileNav()">
+                    <i class="fas fa-bars"></i> Toggle Menu
+                </button>
+                <ul id="mobileNav">
+                    <li><a href="#"><i class="fas fa-home"></i> হোম</a></li>
+                    <li><a href="#"><i class="fas fa-images"></i> গ্যালারি</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> বন্ধুরা</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> স্মৃতিকথা</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> About Creator</a></li>
+                    <li><a href="#"><i class="fas fa-sign-in-alt"></i> লগইন</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Typography Test -->
+        <div class="test-section">
+            <h2>📝 Typography Test</h2>
+            <div class="feature-demo">
+                <div class="demo-card">
+                    <h4>Responsive Headings</h4>
+                    <h1>Heading 1 (Responsive)</h1>
+                    <h2>Heading 2 (Responsive)</h2>
+                    <h3>Heading 3 (Responsive)</h3>
+                    <h4>Heading 4 (Responsive)</h4>
+                    <p>This paragraph text should be readable on all devices. The font sizes use clamp() for responsive scaling.</p>
+                </div>
+                <div class="demo-card">
+                    <h4>Button Test</h4>
+                    <div class="demo-buttons">
+                        <button class="btn btn-primary">Primary Button</button>
+                        <button class="btn btn-secondary">Secondary Button</button>
+                        <button class="btn btn-accent">Accent Button</button>
+                    </div>
+                    <p>Buttons should scale appropriately on different screen sizes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Test -->
+        <div class="test-section">
+            <h2>📋 Form Elements Test</h2>
+            <div class="feature-demo">
+                <div class="demo-card">
+                    <h4>Search Form</h4>
+                    <div class="demo-form">
+                        <input type="text" placeholder="Search friends...">
+                        <select>
+                            <option>All Categories</option>
+                            <option>Class A</option>
+                            <option>Class B</option>
+                        </select>
+                        <button class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <h4>Contact Form</h4>
+                    <div class="demo-form">
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Message" rows="3"></textarea>
+                        <button class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid Test -->
+        <div class="test-section">
+            <h2>📊 Grid Layout Test</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <i class="fas fa-user"></i>
+                    <h5>User 1</h5>
+                </div>
+                <div class="demo-item">
+                    <i class="fas fa-user"></i>
+                    <h5>User 2</h5>
+                </div>
+                <div class="demo-item">
+                    <i class="fas fa-user"></i>
+                    <h5>User 3</h5>
+                </div>
+                <div class="demo-item">
+                    <i class="fas fa-user"></i>
+                    <h5>User 4</h5>
+                </div>
+                <div class="demo-item">
+                    <i class="fas fa-user"></i>
+                    <h5>User 5</h5>
+                </div>
+                <div class="demo-item">
+                    <i class="fas fa-user"></i>
+                    <h5>User 6</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Test -->
+        <div class="test-section">
+            <h2>🃏 Card Layout Test</h2>
+            <div class="feature-demo">
+                <div class="demo-card">
+                    <h4>Feature Card 1</h4>
+                    <p>This is a feature card that should look good on all devices. The content should be properly spaced and readable.</p>
+                    <button class="btn btn-primary">Learn More</button>
+                </div>
+                <div class="demo-card">
+                    <h4>Feature Card 2</h4>
+                    <p>Another feature card with different content. Cards should stack properly on mobile devices and display in a grid on larger screens.</p>
+                    <button class="btn btn-secondary">View Details</button>
+                </div>
+                <div class="demo-card">
+                    <h4>Feature Card 3</h4>
+                    <p>Third feature card to test the responsive grid layout. On mobile, these should stack vertically, on tablet 2 columns, and on desktop 3 columns.</p>
+                    <button class="btn btn-accent">Get Started</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Notes -->
+        <div class="test-notes">
+            <h3>🧪 Testing Instructions</h3>
+            <ul>
+                <li>Resize your browser window to test different screen sizes</li>
+                <li>Use browser dev tools to simulate mobile devices</li>
+                <li>Check that text remains readable on all screen sizes</li>
+                <li>Verify that buttons and forms are touch-friendly on mobile</li>
+                <li>Test navigation menu on mobile devices</li>
+                <li>Ensure all content is accessible without horizontal scrolling</li>
+                <li>Check that images and cards scale properly</li>
+                <li>Test form inputs on mobile keyboards</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Breakpoint detection
+        function updateBreakpoints() {
+            const width = window.innerWidth;
+            const cards = document.querySelectorAll('.breakpoint-card');
+            
+            cards.forEach(card => card.classList.remove('active'));
+            
+            if (width >= 1024) {
+                document.getElementById('desktop').classList.add('active');
+            } else if (width >= 768) {
+                document.getElementById('tablet').classList.add('active');
+            } else if (width >= 480) {
+                document.getElementById('mobile').classList.add('active');
+            } else {
+                document.getElementById('small-mobile').classList.add('active');
+            }
+        }
+
+        // Mobile navigation toggle
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            nav.classList.toggle('hidden');
+        }
+
+        // Initialize
+        updateBreakpoints();
+        window.addEventListener('resize', updateBreakpoints);
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.setAttribute('data-theme', 
+                document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+            );
+        });
+
+        // Mobile navigation toggle for main navbar
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 
