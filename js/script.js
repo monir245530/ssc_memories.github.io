@@ -210,7 +210,7 @@ function getGalleryData() {
             { id: 1006, name: "ফেয়ারওয়েল মুহূর্ত ৬", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0130.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৬" },
             { id: 1007, name: "ফেয়ারওয়েল মুহূর্ত ৭", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0131.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৭" },
             { id: 1008, name: "ফেয়ারওয়েল মুহূর্ত ৮", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0133.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৮" },
-            { id: 1009, name: "ফেয়ারওয়েল মুহূর্ত ৯", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0117.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৯" },
+  
             { id: 1010, name: "ফেয়ারওয়েল মুহূর্ত ১০", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0118.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ১০" },
             { id: 1011, name: "ফেয়ারওয়েল মুহূর্ত ১১", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0119.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ১১" },
             { id: 1012, name: "ফেয়ারওয়েল মুহূর্ত ১২", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0120.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ১২" },
@@ -234,7 +234,7 @@ function getGalleryData() {
             { id: 1030, name: "ফেয়ারওয়েল মুহূর্ত ৩০", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0103.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৩০" },
             { id: 1031, name: "ফেয়ারওয়েল মুহূর্ত ৩১", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0104.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৩১" },
             { id: 1032, name: "ফেয়ারওয়েল মুহূর্ত ৩২", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0089.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৩২" },
-            { id: 1033, name: "ফেয়ারওয়েল মুহূর্ত ৩৩", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0095.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৩৩" },
+           
             { id: 1034, name: "ফেয়ারওয়েল মুহূর্ত ৩৪", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0096.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৩৪" },
             { id: 1035, name: "ফেয়ারওয়েল মুহূর্ত ৩৫", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0097.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৩৫" },
             { id: 1036, name: "ফেয়ারওয়েল মুহূর্ত ৩৬", category: "farewell", image: "images/gallery/farewell/IMG-20250630-WA0098.jpg", description: "ফেয়ারওয়েল অনুষ্ঠানের স্মরণীয় মুহূর্ত ৩৬" },
